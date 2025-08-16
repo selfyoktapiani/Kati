@@ -12,7 +12,6 @@
         background: #fdfdfd;
       }
 
-      /* --- Navbar --- */
       nav.navbar {
         display: flex;
         justify-content: space-between;
@@ -21,7 +20,6 @@
         background: #afe1af;
         color: #063b2d;
       }
-
       nav h1 {
         margin: 0;
       }
@@ -32,9 +30,8 @@
         background: white;
         border-radius: 20px;
         padding: 5px 10px;
-        width: 350px; /* Default laptop */
+        width: 350px;
       }
-
       .search-container input {
         padding: 8px 12px;
         border-radius: 20px;
@@ -42,7 +39,6 @@
         outline: none;
         width: 100%;
       }
-
       .hamburger-menu {
         font-size: 22px;
         cursor: pointer;
@@ -50,14 +46,12 @@
         color: white;
         padding: 8px 12px;
         border-radius: 5px;
-        margin-left: 10px; /* kasih jarak dengan search */
+        margin-left: 10px;
       }
-
       .hamburger-menu:hover {
         background: #555;
       }
 
-      /* Sidebar */
       .sidebar {
         position: fixed;
         top: 0;
@@ -70,7 +64,6 @@
         transition: left 0.3s ease;
         z-index: 1000;
       }
-
       .sidebar a {
         display: block;
         padding: 12px 20px;
@@ -82,11 +75,6 @@
       }
       .sidebar.active {
         left: 0;
-      }
-      /* --- Produk Carousel --- */
-      .carousel-container {
-        position: relative;
-        padding: 30px 60px;
       }
 
       .overlay {
@@ -103,6 +91,10 @@
         display: block;
       }
 
+      .carousel-container {
+        position: relative;
+        padding: 30px 60px;
+      }
       .product-list {
         display: flex;
         gap: 20px;
@@ -110,7 +102,6 @@
         scroll-behavior: smooth;
         scroll-snap-type: x mandatory;
       }
-
       .product-list::-webkit-scrollbar {
         display: none;
       }
@@ -127,12 +118,10 @@
         transition: transform 0.3s, box-shadow 0.3s;
         cursor: pointer;
       }
-
       .product-card:hover {
         transform: scale(1.05);
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
       }
-
       .product-card img {
         width: 100%;
         height: 200px;
@@ -141,7 +130,6 @@
         margin-bottom: 10px;
         transition: transform 0.3s;
       }
-
       .product-card:hover img {
         transform: scale(1.1);
       }
@@ -154,16 +142,12 @@
         border-radius: 6px;
         text-decoration: none;
         transition: 0.3s;
-        position: relative;
-        z-index: 5;
       }
-
       .btn-beli:hover {
         background: #2ecc71;
         transform: scale(1.05);
       }
 
-      /* Tombol Panah */
       .arrow {
         position: absolute;
         top: 50%;
@@ -176,44 +160,20 @@
         height: 45px;
         border-radius: 50%;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-
       .arrow.left {
         left: 15px;
       }
-
       .arrow.right {
         right: 15px;
       }
-
       .arrow:hover {
         background: #27ae60;
         color: #fff;
         transform: translateY(-50%) scale(1.1);
-      }
-
-      /* Responsif Tablet */
-      @media (max-width: 1024px) {
-        .search-container {
-          width: 280px;
-        }
-      }
-
-      /* Responsif HP */
-      @media (max-width: 768px) {
-        .navbar {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .search-container {
-          width: 100%;
-          margin-top: 10px;
-        }
       }
     </style>
   </head>
@@ -234,117 +194,120 @@
       <a href="index.html#about">📑 Tentang Kami</a>
       <a href="index.html#contact">📞 Kontak</a>
     </div>
-
-    <!-- Overlay -->
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
-    <!-- Konten Produk -->
+    <!-- Tanaman Hias -->
     <h2 style="text-align: center">Tanaman Hias</h2>
     <section class="carousel-container">
-      <button class="arrow left" onclick="scrollLeft()">&#10094;</button>
-      <div class="product-list" id="productList">
+      <button class="arrow left" onclick="scrollLeft('productList1')">
+        &#10094;
+      </button>
+      <div class="product-list" id="productList1">
         <div class="product-card">
-          <img src="img/OIP (1).jpeg" alt="azalea" />
+          <img src="OIP1.jpeg" alt="azalea" />
           <h3>Bonsai Azalea</h3>
           <p class="price">Rp 171.000</p>
           <a
-            href="transaksi.html?produk=Bonsai%20Azalea&harga=171000&gambar=img/OIP%20(1).jpeg"
+            href="transaksi.html?produk=Bonsai%20Azalea&harga=171000&gambar=OIP1.jpeg"
             class="btn-beli"
             >Beli / Pesan</a
           >
         </div>
-
         <div class="product-card">
-          <img src="img/Monstera-in-Sawyer-Pot-Large.jpg" alt="deliciosa" />
+          <img src="Monstera-in-Sawyer-Pot-Large.jpg" alt="deliciosa" />
           <h3>Monstera Deliciosa</h3>
           <p class="price">Rp 72.000</p>
           <a
-            href="transaksi.html?produk=Monstera%20Deliciosa&harga=72000&gambar=img/Monstera-in-Sawyer-Pot-Large.jpg"
+            href="transaksi.html?produk=Monstera%20Deliciosa&harga=72000&gambar=Monstera-in-Sawyer-Pot-Large.jpg"
             class="btn-beli"
             >Beli / Pesan</a
           >
         </div>
 
         <div class="product-card">
-          <img src="img/lm.jpg" alt="Sanseviera " />
+          <img src="lm.jpg" alt="Sanseviera " />
           <h3>Sanseviera</h3>
           <p class="price">Rp 83.000</p>
           <a
-            href="transaksi.html?produk=Sanseviera&harga=83000&gambar=img/lm.jpg"
+            href="transaksi.html?produk=Sanseviera&harga=83000&gambar=lm.jpg"
             class="btn-beli"
             >Beli / Pesan</a
           >
         </div>
 
         <div class="product-card">
-          <img src="img/PHG0718Bonsaitree08.jpg" alt="bougenville" />
+          <img src="PHG0718Bonsaitree08.jpg" alt="bougenville" />
           <h3>Bonsai Bougenville</h3>
           <p class="price">Rp 99.000</p>
           <a
-            href="transaksi.html?produk=Bonsai%20Bougenville&harga=99000&gambar=img/PHG0718Bonsaitree08.jpg"
+            href="transaksi.html?produk=Bonsai%20Bougenville&harga=99000&gambar=PHG0718Bonsaitree08.jpg"
             class="btn-beli"
             >Beli / Pesan</a
           >
         </div>
 
         <div class="product-card">
-          <img src="img/spathiphyllum-peace-lily.jpg" alt="lily" />
+          <img src="spathiphyllum-peace-lily.jpg" alt="lily" />
           <h3>Peace Lily</h3>
           <p class="price">Rp 58.000</p>
           <a
-            href="transaksi.html?produk=Peace%20Lily&harga=58000&gambar=img/spathiphyllum-peace-lily.jpg"
+            href="transaksi.html?produk=Peace%20Lily&harga=58000&gambar=spathiphyllum-peace-lily.jpg"
             class="btn-beli"
             >Beli / Pesan</a
           >
         </div>
 
         <div class="product-card">
-          <img src="img/Monstera-Siltepecana-El-Salvador.jpg" alt="monstera" />
+          <img src="Monstera-Siltepecana-El-Salvador.jpg" alt="monstera" />
           <h3>Monstera Siltepecana</h3>
           <p class="price">Rp 159.000</p>
           <a
-            href="transaksi.html?produk=Monstera%20Siltepecana&harga=159000&gambar=img/Monstera-Siltepecana-El-Salvador.jpg"
+            href="transaksi.html?produk=Monstera%20Siltepecana&harga=159000&gambar=Monstera-Siltepecana-El-Salvador.jpg"
             class="btn-beli"
             >Beli / Pesan</a
           >
         </div>
 
         <div class="product-card">
-          <img src="img/ct.jpg" alt="kaktus-mini" />
+          <img src="ct.jpg" alt="kaktus-mini" />
           <h3>Kaktus Mini</h3>
           <p class="price">Rp 24.790</p>
           <a
-            href="transaksi.html?produk=Kaktus%20Mini&harga=24790&gambar=img/ct.jpg"
+            href="transaksi.html?produk=Kaktus%20Mini&harga=24790&gambar=ct.jpg"
             class="btn-beli"
             >Beli / Pesan</a
           >
         </div>
       </div>
-      <button class="arrow right" onclick="scrollRight()">&#10095;</button>
+      <button class="arrow right" onclick="scrollRight('productList1')">
+        &#10095;
+      </button>
     </section>
 
-    <!-- Carousel Tanaman Produktif -->
+    <!-- Tanaman Produktif -->
     <h2 style="text-align: center">Tanaman Produktif</h2>
     <section class="carousel-container">
-      <button class="arrow left" onclick="scrollLeft()">&#10094;</button>
-      <div class="product-list" id="productList">
+      <button class="arrow left" onclick="scrollLeft('productList2')">
+        &#10094;
+      </button>
+      <div class="product-list" id="productList2">
         <div class="product-card">
-          <img src="img/cara-menanam-daun-bawang-di-pot.jpg" alt="daun" />
+          <img src="cara-menanam-daun-bawang-di-pot.jpg" alt="daun" />
           <h3>Daun Bawang</h3>
           <p class="price">Rp 12.000</p>
           <a
-            href="transaksi.html?produk=Daun%20Bawang&harga=12000&gambar=img/cara-menanam-daun-bawang-di-pot.jpg"
+            href="transaksi.html?produk=Daun%20Bawang&harga=12000&gambar=cara-menanam-daun-bawang-di-pot.jpg"
             class="btn-beli"
             >Beli / Pesan</a
           >
         </div>
 
         <div class="product-card">
-          <img src="img/OIP.jpeg" alt="tomat" />
+          <img src="OIP.jpeg" alt="tomat" />
           <h3>Pohon Tomat</h3>
           <p class="price">Rp 76.000</p>
           <a
-            href="transaksi.html?produk=Pohon%20Tomat&harga=76000&gambar=img/OIP.jpeg"
+            href="transaksi.html?produk=Pohon%20Tomat&harga=76000&gambar=OIP.jpeg"
             class="btn-beli"
           >
             Beli / Pesan
@@ -352,33 +315,33 @@
         </div>
 
         <div class="product-card">
-          <img src="img/maxresdefault.jpg" alt="timun " />
+          <img src="maxresdefault.jpg" alt="timun " />
           <h3>Mentimun</h3>
           <p class="price">Rp 47.500</p>
           <a
-            href="transaksi.html?produk=Mentimun&harga=47500&gambar=img/maxresdefault.jpg"
+            href="transaksi.html?produk=Mentimun&harga=47500&gambar=maxresdefault.jpg"
             class="btn-beli"
             >Beli / Pesan</a
           >
         </div>
 
         <div class="product-card">
-          <img src="img/026441f17b346a14604582d76f8dc821.jpg" alt="strawberi" />
+          <img src="026441f17b346a14604582d76f8dc821.jpg" alt="strawberi" />
           <h3>Strawberi</h3>
           <p class="price">Rp 35.000</p>
           <a
-            href="transaksi.html?produk=Strawberi&harga=35000&gambar=img/026441f17b346a14604582d76f8dc821.jpg"
+            href="transaksi.html?produk=Strawberi&harga=35000&gambar=026441f17b346a14604582d76f8dc821.jpg"
             class="btn-beli"
             >Beli / Pesan</a
           >
         </div>
 
         <div class="product-card">
-          <img src="img/pohon-jeruk.jpg" alt="jeruk" />
+          <img src="pohon-jeruk.jpg" alt="jeruk" />
           <h3>Pohon Jeruk</h3>
           <p class="price">Rp 169.000</p>
           <a
-            href="transaksi.html?produk=Pohon%20Jeruk&harga=169000&gambar=img/pohon-jeruk.jpg"
+            href="transaksi.html?produk=Pohon%20Jeruk&harga=169000&gambar=pohon-jeruk.jpg"
             class="btn-beli"
           >
             Beli / Pesan
@@ -386,43 +349,46 @@
         </div>
 
         <div class="product-card">
-          <img src="img/cabe.jpg" alt="cabe" />
+          <img src="cabe.jpg" alt="cabe" />
           <h3>Pohon Cabai</h3>
           <p class="price">Rp 57.000</p>
           <a
-            href="transaksi.html?produk=Pohon%20Cabai&harga=57000&gambar=img/cabe.jpg"
+            href="transaksi.html?produk=Pohon%20Cabai&harga=57000&gambar=cabe.jpg"
             class="btn-beli"
           >
             Beli / Pesan
           </a>
         </div>
       </div>
-      <button class="arrow right" onclick="scrollRight()">&#10095;</button>
+      <button class="arrow right" onclick="scrollRight('productList2')">
+        &#10095;
+      </button>
     </section>
 
-    <!-- Carousel bohon besar -->
+    <!-- Pohon & Tanaman Besar -->
     <h2 style="text-align: center">Pohon & Tanaman Besar</h2>
     <section class="carousel-container">
-      <button class="arrow left" onclick="scrollLeft()">&#10094;</button>
-      <div class="product-list" id="productList">
+      <button class="arrow left" onclick="scrollLeft('productList3')">
+        &#10094;
+      </button>
+      <div class="product-list" id="productList3">
         <div class="product-card">
-          <img src="img/1614309913.png" alt="palem" />
+          <img src="1614309913.png" alt="palem" />
           <h3>Pohon Palem Bismarck</h3>
           <p class="price">Rp 497.000</p>
           <a
-            href="transaksi.html?produk=Pohon%20Palem%20Bismarck&harga=497000&gambar=img/1614309913.png"
+            href="transaksi.html?produk=Pohon%20Palem%20Bismarck&harga=497000&gambar=1614309913.png"
             class="btn-beli"
+            >Beli / Pesan</a
           >
-            Beli / Pesan
-          </a>
         </div>
 
         <div class="product-card">
-          <img src="img/pk.jpg" alt="kamboja" />
+          <img src="pk.jpg" alt="kamboja" />
           <h3>Pohon Kamboja</h3>
           <p class="price">Rp 762.000</p>
           <a
-            href="transaksi.html?produk=Pohon%20Kamboja&harga=762000&gambar=img/pk.jpg"
+            href="transaksi.html?produk=Pohon%20Kamboja&harga=762000&gambar=pk.jpg"
             class="btn-beli"
           >
             Beli / Pesan
@@ -431,14 +397,13 @@
 
         <div class="product-card">
           <img
-            src="img/pohon-ketapang-kencana-naikkan-nilai-properti-688x1024.webp"
+            src="pohon-ketapang-kencana-naikkan-nilai-properti-688x1024.webp"
             alt="ketapang"
           />
-          <h3>Pohon ketapang Kencana</h3>
+          <h3>Pohon Ketapang Kencana</h3>
           <p class="price">Rp 680.700</p>
-
           <a
-            href="transaksi.html?produk=Pohon%20Ketapang%20Kencana&harga=680700&gambar=img/pohon-ketapang-kencana-naikkan-nilai-properti-688x1024.webp"
+            href="transaksi.html?produk=Pohon%20Ketapang%20Kencana&harga=680700&gambar=pohon-ketapang-kencana-naikkan-nilai-properti-688x1024.webp"
             class="btn-beli"
           >
             Beli / Pesan
@@ -446,19 +411,20 @@
         </div>
 
         <div class="product-card">
-          <img src="img/jual-pohon-tabebuya-di-bandung.jpg" alt="ketapang" />
+          <img src="jual-pohon-tabebuya-di-bandung.jpg" alt="tabebuya" />
           <h3>Pohon Tabebuya</h3>
           <p class="price">Rp 930.700</p>
-
           <a
-            href="transaksi.html?produk=Pohon%20Tabebuya&harga=930700&gambar=img/jual-pohon-tabebuya-di-bandung.jpg"
+            href="transaksi.html?produk=Pohon%20Tabebuya&harga=930700&gambar=jual-pohon-tabebuya-di-bandung.jpg"
             class="btn-beli"
           >
             Beli / Pesan
           </a>
         </div>
       </div>
-      <button class="arrow right" onclick="scrollRight()">&#10095;</button>
+      <button class="arrow right" onclick="scrollRight('productList3')">
+        &#10095;
+      </button>
     </section>
 
     <script>
@@ -466,17 +432,13 @@
         document.getElementById("sidebar").classList.toggle("active");
         document.getElementById("overlay").classList.toggle("active");
       }
-
-      function scrollLeft() {
+      function scrollLeft(id) {
         document
-          .getElementById("product-list")
+          .getElementById(id)
           .scrollBy({ left: -250, behavior: "smooth" });
       }
-
-      function scrollRight() {
-        document
-          .getElementById("product-list")
-          .scrollBy({ left: 250, behavior: "smooth" });
+      function scrollRight(id) {
+        document.getElementById(id).scrollBy({ left: 250, behavior: "smooth" });
       }
     </script>
   </body>
